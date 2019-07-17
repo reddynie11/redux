@@ -7,4 +7,7 @@ import {applyMiddleware, createStore} from 'redux';
 
 const createStoreWithMiddleware = applyMiddleware()(createStore);
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(
+    <Provider store={createStoreWithMiddleware()}>  
+        <App />
+    </Provider>, document.getElementById('root'));
